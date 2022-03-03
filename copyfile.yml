@@ -1,0 +1,8 @@
+--- Copy war file from src to dest!
+- hosts: web_server
+  become: true
+  tasks:
+    - name: copy war onto tomcat server
+      copy:
+        src: /opt/playbooks/webapp/target/webapp.war
+        dest: /opt/apache-tomcat/webapps
